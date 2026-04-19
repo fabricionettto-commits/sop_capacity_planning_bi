@@ -2,6 +2,8 @@
 
 Portfolio project focused on **S&OP, capacity planning, maritime logistics, business intelligence, and Python process automation**.
 
+![Capacity planning dashboard preview](docs/screenshots/capacity_planning_report.png)
+
 This project demonstrates how a BAPLIE-style Excel file can be transformed into executive-ready intelligence: capacity KPIs, gate-in visibility, commercial views, plan-versus-actual dashboards, and HTML reports.
 
 Demo vessel: **Good Winter 001**
@@ -10,10 +12,6 @@ Demo vessel: **Good Winter 001**
 
 ## Visual Preview
 
-### Portfolio Cover
-
-![Portfolio cover](docs/screenshots/portfolio_cover.png)
-
 ### Capacity Planning Report
 
 ![Capacity planning report](docs/screenshots/capacity_planning_report.png)
@@ -21,6 +19,10 @@ Demo vessel: **Good Winter 001**
 ### Commercial Intelligence Report
 
 ![Commercial intelligence report](docs/screenshots/commercial_intelligence_report.png)
+
+### Portfolio Cover
+
+![Portfolio cover](docs/screenshots/portfolio_cover.png)
 
 ## Open The Reports
 
