@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fabricio Neto dos Santos | Logística, Automação e Inteligência de Dados</title>
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #627084;
+      --line: #d7e3ef;
+      --paper: #f5f8fc;
+      --white: #ffffff;
+      --navy: #071a33;
+      --navy2: #0d2a52;
+      --sky: #7cc7ff;
+      --sky2: #d8efff;
+      --gold: #bd9437;
+      --blue: #2f78b7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    .page {
+      min-height: 100vh;
+      background:
+        linear-gradient(135deg, rgba(7, 26, 51, .98), rgba(13, 42, 82, .95)),
+        repeating-linear-gradient(90deg, rgba(124, 199, 255, .08) 0 1px, transparent 1px 96px),
+        repeating-linear-gradient(0deg, rgba(124, 199, 255, .06) 0 1px, transparent 1px 72px);
+      color: var(--white);
+      display: flex;
+      align-items: stretch;
+    }
+
+    .hero {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--sky2);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 4px;
+      background: var(--sky);
+      border-radius: 3px;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 18px 0 16px;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: .96;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 0;
+      color: #e8f5ff;
+      font-size: clamp(18px, 2vw, 23px);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .pill {
+      appearance: none;
+      border: 1px solid rgba(216, 239, 255, .72);
+      background: rgba(124, 199, 255, .2);
+      color: #f7fbff;
+      padding: 10px 13px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 0 0 rgba(124, 199, 255, 0);
+      transform: translateY(0);
+      transition: transform .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
+    }
+
+    .pill:hover,
+    .pill:focus-visible {
+      background: var(--sky);
+      color: var(--navy);
+      box-shadow: 0 10px 24px rgba(124, 199, 255, .28);
+      transform: translateY(-3px);
+      outline: none;
+    }
+
+    .impact-panel {
+      background: rgba(255, 255, 255, .94);
+      color: var(--ink);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .24);
+    }
+
+    .impact-head {
+      padding: 20px 22px;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .impact-head strong {
+      display: block;
+      color: var(--navy2);
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .impact-head span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .metric {
+      padding: 18px 20px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      min-height: 112px;
+    }
+
+    .metric:nth-child(2n) {
+      border-right: 0;
+    }
+
+    .metric b {
+      display: block;
+      color: var(--navy2);
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    main {
+      background: var(--paper);
+    }
+
+    .section {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 54px 0;
+    }
+
+    .section-title {
+      display: grid;
+      grid-template-columns: minmax(0, .75fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .capability {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      min-height: 250px;
+      cursor: pointer;
+      transform: translateY(0);
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .capability:hover {
+      border-color: var(--sky);
+      box-shadow: 0 16px 32px rgba(13, 42, 82, .14);
+      transform: translateY(-5px);
+    }
+
+    .capability .tag {
+      display: inline-block;
+      color: var(--navy);
+      background: var(--sky);
+      border-radius: 6px;
+      padding: 6px 9px;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .capability:nth-child(2) .tag {
+      background: #a9ddff;
+    }
+
+    .capability:nth-child(3) .tag {
+      background: #c6e9ff;
+    }
+
+    .capability:nth-child(4) .tag {
+      background: #e4f4ff;
+    }
+
+    h3 {
+      margin: 16px 0 10px;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .capability p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .screen {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .mock-dashboard {
+      min-height: 420px;
+      padding: 22px;
+      background:
+        linear-gradient(135deg, rgba(7, 26, 51, .96), rgba(13, 42, 82, .94)),
+        repeating-linear-gradient(90deg, rgba(124, 199, 255, .08) 0 1px, transparent 1px 72px);
+      color: #ffffff;
+    }
+
+    .mock-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .mock-title strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.1;
+    }
+
+    .mock-title span {
+      display: block;
+      margin-top: 5px;
+      color: var(--sky2);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .mock-status {
+      border: 1px solid rgba(124, 199, 255, .55);
+      border-radius: 8px;
+      padding: 8px 10px;
+      color: var(--sky2);
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .mock-cards {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .mock-card {
+      border: 1px solid rgba(124, 199, 255, .35);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .08);
+      padding: 12px;
+    }
+
+    .mock-card b {
+      display: block;
+      color: var(--sky);
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .mock-card span {
+      display: block;
+      margin-top: 7px;
+      color: #d8efff;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .mock-bars {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .mock-bar {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr) 46px;
+      gap: 10px;
+      align-items: center;
+      color: #e8f5ff;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .track {
+      height: 10px;
+      border-radius: 8px;
+      background: rgba(216, 239, 255, .16);
+      overflow: hidden;
+    }
+
+    .fill {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--sky), #ffffff);
+    }
+
+    .mock-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 8px;
+      font-size: 12px;
+    }
+
+    .mock-table th,
+    .mock-table td {
+      padding: 10px;
+      border-bottom: 1px solid rgba(216, 239, 255, .16);
+      text-align: left;
+    }
+
+    .mock-table th {
+      color: var(--sky2);
+      text-transform: uppercase;
+      font-size: 10px;
+    }
+
+    .mock-table td:last-child {
+      color: var(--sky);
+      font-weight: 900;
+    }
+
+    .screen-caption {
+      padding: 14px 16px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      border-top: 1px solid var(--line);
+    }
+
+    .pipeline {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .step:last-child {
+      border-bottom: 0;
+    }
+
+    .number {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      background: var(--navy2);
+      font-weight: 900;
+    }
+
+    .step strong {
+      display: block;
+      font-size: 17px;
+    }
+
+    .step span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .stack button {
+      appearance: none;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: var(--navy2);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+      transform: translateY(0);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .stack button:hover,
+    .stack button:focus-visible {
+      background: var(--sky2);
+      border-color: var(--sky);
+      transform: translateY(-3px);
+      outline: none;
+    }
+
+    .closing {
+      background: var(--navy);
+      color: #ffffff;
+    }
+
+    .closing .section {
+      padding: 42px 0;
+    }
+
+    .closing-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .closing h2 {
+      color: #ffffff;
+      font-size: clamp(26px, 3vw, 38px);
+    }
+
+    .closing p {
+      margin: 10px 0 0;
+      color: #d2dfdc;
+      font-size: 16px;
+      font-weight: 600;
+      max-width: 760px;
+    }
+
+    .closing .data-disclaimer {
+      color: rgba(216, 239, 255, .72);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: none;
+      max-width: 620px;
+    }
+
+    .contact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 8px;
+      background: var(--sky);
+      color: var(--navy);
+      font-weight: 900;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .section-title,
+      .workflow,
+      .closing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .capability-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        min-height: auto;
+      }
+
+      .hero,
+      .section {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .metric-grid,
+      .capability-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mock-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mock-bar {
+        grid-template-columns: 74px minmax(0, 1fr) 38px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="page">
+    <div class="hero">
+      <section>
+        <div class="eyebrow">Fabricio Neto dos Santos</div>
+        <h1>Logística marítima transformada em inteligência de decisão.</h1>
+        <p class="lead">
+          Especialista em S&OP, Capacity Planning e Business Intelligence, com mais de 15 anos em operações marítimas, logística integrada e planejamento orientado a dados.
+        </p>
+        <div class="hero-actions" aria-label="competências principais">
+          <button class="pill" type="button">S&OP</button>
+          <button class="pill" type="button">Capacity Planning</button>
+          <button class="pill" type="button">Business Intelligence</button>
+          <button class="pill" type="button">Python</button>
+          <button class="pill" type="button">Pandas</button>
+          <button class="pill" type="button">Shipping Operations</button>
+        </div>
+      </section>
+
+      <aside class="impact-panel" aria-label="impacto do projeto">
+        <div class="impact-head">
+          <strong>Operational Intelligence Portfolio</strong>
+          <span>Da planilha bruta ao painel executivo navegável</span>
+        </div>
+        <div class="metric-grid">
+          <div class="metric">
+            <b>15+</b>
+            <span>anos em operações marítimas, logística e planejamento</span>
+          </div>
+          <div class="metric">
+            <b>BI</b>
+            <span>dashboards executivos em HTML, Power BI e Excel</span>
+          </div>
+          <div class="metric">
+            <b>ETL</b>
+            <span>pipelines em Python, SQL e Excel avançado</span>
+          </div>
+          <div class="metric">
+            <b>TEU</b>
+            <span>gestão de capacidade, booking, receita e serviço</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section-title">
+        <h2>Onde meu trabalho gera valor</h2>
+        <p>
+          A proposta é conectar operação, comercial e gestão em uma mesma leitura: capacidade, demanda, receita, restrições, nível de serviço e risco operacional.
+        </p>
+      </div>
+
+      <div class="capability-grid">
+        <article class="capability">
+          <span class="tag">Execução</span>
+          <h3>Planejamento operacional por viagem</h3>
+          <p>
+            Consolidação de BAPLIE, booking, discharge list e gate-in para acompanhar movimentos de carga e descarga com foco em portos, equipamentos especiais e prioridades de bordo.
+          </p>
+        </article>
+
+        <article class="capability">
+          <span class="tag">Comercial</span>
+          <h3>Visão por cliente, receita e volume</h3>
+          <p>
+            Análise de clientes, booking parties, shippers, POL/POD, rentabilidade e volume para apoiar decisões de pricing, prioridade de carga e gestão de carteira.
+          </p>
+        </article>
+
+        <article class="capability">
+          <span class="tag">Dados</span>
+          <h3>Inteligência para decisão rápida</h3>
+          <p>
+            Modelagem de dados e regras operacionais em código para transformar bases dispersas em KPIs confiáveis, comparáveis e prontos para reunião executiva.
+          </p>
+        </article>
+
+        <article class="capability">
+          <span class="tag">Automação</span>
+          <h3>Relatórios prontos para uso</h3>
+          <p>
+            Scripts Python para leitura de Excel, tratamento de dados, geração de HTML interativo, arquivos executivos e rotinas que reduzem erro manual.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Projeto em destaque</h2>
+        <p>
+          Um app local de inteligência operacional que demonstra a ponte entre experiência logística real e capacidade técnica aplicada.
+        </p>
+      </div>
+
+      <div class="workflow">
+        <div class="pipeline">
+          <div class="step">
+            <div class="number">01</div>
+            <div>
+              <strong>Base operacional real</strong>
+              <span>BAPLIE, Booking Report, discharge list, programação de viagens e bases auxiliares em Excel.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="number">02</div>
+            <div>
+              <strong>ETL com regra de negócio</strong>
+              <span>Normalização de portos, tipos de equipamento, TEUs, temperatura, IMO, NOR, OOG e pesos.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="number">03</div>
+            <div>
+              <strong>Inteligência operacional e comercial</strong>
+              <span>Sumários por operação, porto, cliente, shipper, tipo de carga e indicadores de atenção.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="number">04</div>
+            <div>
+              <strong>Entrega para decisão</strong>
+              <span>Dashboards HTML, arquivos Excel consolidados e páginas navegáveis por operação.</span>
+            </div>
+          </div>
+        </div>
+
+        <figure class="screen">
+          <div class="mock-dashboard" role="img" aria-label="Mockup fictício de dashboard operacional">
+            <div class="mock-top">
+              <div class="mock-title">
+                <strong>Operational Control Tower</strong>
+                <span>Numbers from Baplie_Github.xlsx · fictional labels</span>
+              </div>
+              <div class="mock-status">Good Winter 001</div>
+            </div>
+
+            <div class="mock-cards">
+              <div class="mock-card"><b>740</b><span>Units</span></div>
+              <div class="mock-card"><b>1.437</b><span>TEUs</span></div>
+              <div class="mock-card"><b>14,4k</b><span>Tons</span></div>
+              <div class="mock-card"><b>108</b><span>Reefer</span></div>
+              <div class="mock-card"><b>20</b><span>NOR</span></div>
+            </div>
+
+            <div class="mock-bars">
+              <div class="mock-bar"><span>BRSSA</span><div class="track"><span class="fill" style="width: 32%"></span></div><span>32%</span></div>
+              <div class="mock-bar"><span>BRFOR</span><div class="track"><span class="fill" style="width: 24%"></span></div><span>24%</span></div>
+              <div class="mock-bar"><span>BRMAO</span><div class="track"><span class="fill" style="width: 22%"></span></div><span>22%</span></div>
+            </div>
+
+            <table class="mock-table" aria-label="Tabela fictícia de indicadores">
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>POL</th>
+                  <th>POD</th>
+                  <th>Focus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Client Aurora</td>
+                  <td>BRSSA</td>
+                  <td>SGSIN</td>
+                  <td>Capacity</td>
+                </tr>
+                <tr>
+                  <td>Client Summit</td>
+                  <td>BRSSA</td>
+                  <td>KRPUS</td>
+                  <td>Revenue</td>
+                </tr>
+                <tr>
+                  <td>Client Harmony</td>
+                  <td>BRFOR</td>
+                  <td>CNSHA</td>
+                  <td>Service</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <figcaption class="screen-caption">
+            Mockup com números agregados do arquivo Baplie_Github.xlsx e portos demonstrativos fora da rota real, feito para publicação em GitHub pessoal sem expor dados, clientes, empresas ou viagens reais.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Competências evidenciadas</h2>
+        <p>
+          Este projeto combina visão de supply chain com execução técnica: automação, BI, modelagem, indicadores e domínio prático de operação marítima.
+        </p>
+      </div>
+
+      <div class="stack" aria-label="tecnologias utilizadas">
+        <button type="button">Python</button>
+        <button type="button">Pandas</button>
+        <button type="button">OpenPyXL</button>
+        <button type="button">Power BI</button>
+        <button type="button">SQL</button>
+        <button type="button">S&OP</button>
+        <button type="button">Capacity Planning</button>
+        <button type="button">Forecasting</button>
+        <button type="button">HTML5</button>
+        <button type="button">CSS3</button>
+        <button type="button">JavaScript</button>
+        <button type="button">HTTP Server</button>
+        <button type="button">Excel Reporting</button>
+        <button type="button">Data Cleaning</button>
+        <button type="button">Data Modeling</button>
+        <button type="button">ETL / Data Pipeline</button>
+        <button type="button">Process Automation</button>
+        <button type="button">Maritime Logistics</button>
+        <button type="button">Slot Allocation</button>
+        <button type="button">TEU Management</button>
+        <button type="button">Booking & Revenue</button>
+        <button type="button">Operational KPIs</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="closing">
+    <section class="section">
+      <div class="closing-grid">
+        <div>
+          <h2>Portfólio orientado a problema real, não apenas a código.</h2>
+          <p>
+            Projeto desenvolvido para aproximar tecnologia da rotina logística: menos tempo consolidando planilhas, mais clareza para executar, negociar capacidade, antecipar gargalos e proteger nível de serviço.
+          </p>
+          <p class="data-disclaimer">
+            ** Dados fictícios para demonstração. Nomes, clientes, portos e viagens foram adaptados para uso em portfólio público.
+          </p>
+        </div>
+        <a class="contact" href="https://www.linkedin.com/in/fabricio-neto-pcd/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </footer>
+</body>
+</html>
