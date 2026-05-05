@@ -8,7 +8,19 @@ This is the dedicated technical case behind the main portfolio. It shows how a B
 
 ## Decision Value
 
-This project prevented capacity planning errors before vessel execution by identifying shortfall at port level.
+This project was built to prevent revenue loss and operational rework caused by late capacity visibility.
+
+Before this:
+
+- shortfall was identified too late;
+- planning decisions were reactive;
+- commercial and operations worked with conflicting numbers.
+
+After this:
+
+- capacity risk is visible before execution;
+- planning decisions happen earlier;
+- teams operate with the same numbers.
 
 The operational question:
 
@@ -22,6 +34,14 @@ The answer is produced through repeatable Python processing and dashboard-ready 
 - Processed 950+ container moves in under 20 minutes.
 - Identified shortfall risk before execution, including 99+ TEUs at port level.
 - Created shared visibility for planning, commercial, and execution teams.
+
+## Business Relevance
+
+- Each missed TEU represents lost revenue or reallocation cost.
+- Late shortfall detection leads to operational rework and commercial impact.
+- This system shifts decisions from reactive to proactive, reducing execution risk.
+
+Estimated effect: improves planning accuracy, reduces last-minute changes, and protects vessel utilization.
 
 Demo vessel: **Good Winter 001**
 
