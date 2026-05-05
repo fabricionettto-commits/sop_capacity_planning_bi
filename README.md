@@ -1,14 +1,43 @@
-# S&OP Capacity Planning BI
+# Capacity Shortfall Intelligence
 
-Portfolio project focused on **S&OP, capacity planning, maritime logistics, business intelligence, and Python process automation**.
+Python and BI portfolio case for maritime capacity planning, shortfall analysis, and vessel execution visibility.
+
+This is the dedicated technical case behind the main portfolio. It shows how a BAPLIE-style Excel file becomes operational intelligence: capacity KPIs, gate-in visibility, commercial views, plan-versus-actual dashboards, final moves, and HTML reports.
 
 ![Capacity planning dashboard preview](docs/screenshots/capacity_planning_report.png)
 
-This project demonstrates how a BAPLIE-style Excel file can be transformed into executive-ready intelligence: capacity KPIs, gate-in visibility, commercial views, plan-versus-actual dashboards, and HTML reports.
+## Decision Value
+
+This project prevented capacity planning errors before vessel execution by identifying shortfall at port level.
+
+The operational question:
+
+> Is the vessel plan feasible by TEU, weight, equipment, port, reefer, NOR, IMO, OOG, and execution window?
+
+The answer is produced through repeatable Python processing and dashboard-ready reports, instead of manual spreadsheet consolidation.
+
+## Impact
+
+- Reduced vessel planning cycle time from 4h to 20 min per vessel/day.
+- Processed 950+ container moves in under 20 minutes.
+- Identified shortfall risk before execution, including 99+ TEUs at port level.
+- Created shared visibility for planning, commercial, and execution teams.
 
 Demo vessel: **Good Winter 001**
 
-** Dados ficticios para demonstracao. Names, clients, ports, voyages, and business references were adapted for public portfolio use.
+Public data is sanitized for demonstration. Names, clients, ports, voyages, and business references were adapted for portfolio use.
+
+## Open The Reports
+
+| Report | Link | Decision Supported |
+| --- | --- | --- |
+| Portfolio cover | [index.html](index.html) | Fast project entry point. |
+| Capacity planning | [reports/good_winter_capacity_planning.html](reports/good_winter_capacity_planning.html) | Vessel feasibility by unit, TEU, weight, port, and equipment. |
+| Gate-in execution | [reports/good_winter_gate_in_report.html](reports/good_winter_gate_in_report.html) | Cargo readiness and execution visibility. |
+| Commercial intelligence | [reports/good_winter_commercial_intelligence.html](reports/good_winter_commercial_intelligence.html) | Demand concentration by client and port. |
+| Planning comparison | [reports/good_winter_comparison_dashboard.html](reports/good_winter_comparison_dashboard.html) | Plan versus loaded cargo and exception areas. |
+| Final moves | [reports/good_winter_final_moves.html](reports/good_winter_final_moves.html) | Last operational changes before execution. |
+| All-ports movements | [reports/good_winter_moves_all_ports.html](reports/good_winter_moves_all_ports.html) | Detailed movement visibility by port and equipment. |
 
 ## Visual Preview
 
@@ -24,36 +53,25 @@ Demo vessel: **Good Winter 001**
 
 ![Portfolio cover](docs/screenshots/portfolio_cover.png)
 
-## Open The Reports
+## What The System Does
 
-| Report | Link |
-| --- | --- |
-| Portfolio cover | [index.html](index.html) |
-| Capacity planning | [reports/good_winter_capacity_planning.html](reports/good_winter_capacity_planning.html) |
-| Gate-in execution | [reports/good_winter_gate_in_report.html](reports/good_winter_gate_in_report.html) |
-| Commercial intelligence | [reports/good_winter_commercial_intelligence.html](reports/good_winter_commercial_intelligence.html) |
-| Planning comparison | [reports/good_winter_comparison_dashboard.html](reports/good_winter_comparison_dashboard.html) |
-| Final moves | [reports/good_winter_final_moves.html](reports/good_winter_final_moves.html) |
-| All-ports movements | [reports/good_winter_moves_all_ports.html](reports/good_winter_moves_all_ports.html) |
+- Reads BAPLIE-style Excel data.
+- Normalizes container, port, equipment, weight, and cargo attributes.
+- Classifies equipment and operational flags.
+- Calculates capacity indicators by unit, TEU, ton, port, equipment, reefer, NOR, IMO, and OOG.
+- Produces HTML reports for fast review.
+- Creates a repeatable workflow that can be rerun when the operation changes.
 
-## Why This Project Matters
+## Why It Matters
 
-Logistics teams often work with fragmented spreadsheets, manual checks, and urgent operational questions:
+Manual capacity review is slow and fragile when booking demand, vessel plan, gate-in status, and final moves live in different files.
 
-- How much capacity is planned versus loaded?
-- Which ports and cargo types are driving volume?
-- Where are reefer, NOR, OOG, and weight risks concentrated?
-- How can commercial, planning, and execution teams read the same numbers?
+This project turns that workflow into a decision system:
 
-This project turns that workflow into a structured analytical pipeline using Python, Excel automation, and HTML dashboards.
-
-## Professional Focus
-
-- **S&OP and Capacity Planning**: TEU, weight, port, equipment, reefer, NOR, IMO, and OOG visibility.
-- **Business Intelligence**: executive KPIs, dashboard-ready outputs, and summarized views.
-- **Commercial Intelligence**: fictitious client segmentation, volume concentration, and revenue-index logic.
-- **Operational Execution**: gate-in, BAPLIE, loaded cargo, plan-versus-actual comparison, and exception tracking.
-- **Automation**: repeatable Python scripts that reduce manual spreadsheet consolidation.
+- shortfall appears earlier;
+- risk is visible at port level;
+- planning and execution use the same numbers;
+- dashboards explain what changed and where action is needed.
 
 ## Code Example
 
@@ -90,42 +108,30 @@ Full source: [src/good_winter_baplie_tools.py](src/good_winter_baplie_tools.py)
 
 ```text
 .
-├── README.md
-├── index.html
-├── requirements.txt
-├── data/
-│   └── Baplie_Github.xlsx
-├── docs/
-│   ├── GitHub_Capa_Logistica_Automacao.html
-│   └── screenshots/
-├── reports/
-│   ├── good_winter_capacity_planning.html
-│   ├── good_winter_commercial_intelligence.html
-│   ├── good_winter_comparison_dashboard.html
-│   ├── good_winter_final_moves.html
-│   ├── good_winter_gate_in_report.html
-│   └── good_winter_moves_all_ports.html
-└── src/
-    ├── good_winter_baplie_tools.py
-    ├── good_winter_capacity_planning.py
-    ├── good_winter_commercial_intelligence.py
-    ├── good_winter_comparison_dashboard.py
-    ├── good_winter_final_moves.py
-    ├── good_winter_gate_in_report.py
-    └── good_winter_moves_all_ports.py
+|-- README.md
+|-- index.html
+|-- requirements.txt
+|-- data/
+|   `-- Baplie_Github.xlsx
+|-- docs/
+|   |-- GitHub_Capa_Logistica_Automacao.html
+|   `-- screenshots/
+|-- reports/
+|   |-- good_winter_capacity_planning.html
+|   |-- good_winter_commercial_intelligence.html
+|   |-- good_winter_comparison_dashboard.html
+|   |-- good_winter_final_moves.html
+|   |-- good_winter_gate_in_report.html
+|   `-- good_winter_moves_all_ports.html
+`-- src/
+    |-- good_winter_baplie_tools.py
+    |-- good_winter_capacity_planning.py
+    |-- good_winter_commercial_intelligence.py
+    |-- good_winter_comparison_dashboard.py
+    |-- good_winter_final_moves.py
+    |-- good_winter_gate_in_report.py
+    `-- good_winter_moves_all_ports.py
 ```
-
-## Main Scripts
-
-| Script | Purpose |
-| --- | --- |
-| [good_winter_baplie_tools.py](src/good_winter_baplie_tools.py) | Shared parser, KPI logic, type normalization, and HTML writer. |
-| [good_winter_capacity_planning.py](src/good_winter_capacity_planning.py) | Builds capacity indicators by units, TEUs, tons, equipment type, reefer, NOR, IMO, and OOG. |
-| [good_winter_gate_in_report.py](src/good_winter_gate_in_report.py) | Creates a gate-in/load execution report from the BAPLIE demo file. |
-| [good_winter_commercial_intelligence.py](src/good_winter_commercial_intelligence.py) | Produces a fictitious commercial view by client, port, volume, and revenue-like index. |
-| [good_winter_comparison_dashboard.py](src/good_winter_comparison_dashboard.py) | Compares plan-style capacity targets versus loaded BAPLIE figures. |
-| [good_winter_final_moves.py](src/good_winter_final_moves.py) | Generates an executive final-moves summary for planning and execution teams. |
-| [good_winter_moves_all_ports.py](src/good_winter_moves_all_ports.py) | Exports detailed movements by port and equipment type. |
 
 ## How To Run
 
@@ -144,10 +150,4 @@ python src/good_winter_commercial_intelligence.py
 python src/good_winter_comparison_dashboard.py
 python src/good_winter_final_moves.py
 python src/good_winter_moves_all_ports.py
-```
-
-Outputs are written to:
-
-```text
-reports/
 ```
